@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>Kerf Correction</_name>
+    <id>org.bg.filter.kerf</id>
+    <dependency type="executable" location="extensions">kerf_correction.py</dependency>
+    <dependency type="executable" location="extensions">inkex.py</dependency>
+    <dependency type="executable" location="extensions">simplepath.py</dependency>
+    <param name="kerf" type="float" min="-1000.0" max="1000.0" _gui-text="Kerf (pixels, - inside, + outside)">3.</param>
+    <param name="original" type="boolean" _gui-text="Keep original path?">false</param>
+    <effect>
+	<object-type>all</object-type>
+        <effects-menu>
+            <submenu _name="Modify Path"/>
+        </effects-menu>						    		
+    </effect>
+    <script>
+        <command reldir="extensions" interpreter="python">kerf_correction.py</command>
+    </script>
+</inkscape-extension>
